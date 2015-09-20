@@ -8,8 +8,6 @@ from google.appengine.ext import ndb
 from mail import send_mail
 from configuration import jinja_env
 
-EMAIL = 'jabrouwerutil@gmail.com'
-
 class Handler(webapp2.RequestHandler):
 
   def render_template(self, template_name, write=True, **contents):

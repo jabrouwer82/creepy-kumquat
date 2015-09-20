@@ -24,12 +24,12 @@ class Source(Handler):
     key = source.put()
     self.response.write(key.urlsafe())
 
-class SourceList(handler):
+class SourceList(Handler):
   def get(self):
     sources = Page.query().fetch()
     self.render_template('sources.html', sources=sources)
 
-class SourceDelete(handler):
+class SourceDelete(Handler):
   def get(self, ident):
     source = Page.fetch_by_key(ident)
     source.key.delete()

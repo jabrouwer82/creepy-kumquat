@@ -21,9 +21,9 @@
         <th>Last Major Update</th>
       </tr>
       {% for source in sources|sort(attribute='name') %}
-      {% if manga.major_update > 60 %}
+      {% if source.major_update > 60 %}
       <tr class="warning">
-      {% elif manga.update > 60 %} 
+      {% elif source.update > 60 %} 
       <tr class="info">
       {% else %}
       <tr>

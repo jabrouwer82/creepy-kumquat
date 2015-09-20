@@ -1,15 +1,21 @@
-form webapp2 import WSGIApplication, Route
+from webapp2 import WSGIApplication, Route
 
-app = webapp2.WSGIApplication([
+app = WSGIApplication([
+    Route('/',
+          handler='sources.SourceList',
+          name='home'),
     Route('/sources',
-          handler='sources.SourcesList',
+          handler='sources.SourceList',
           name='sources'),
     Route('/source/new',
-          handler='sources.Sources',
-          name='sources-new'),
+          handler='sources.Source',
+          name='source-new'),
     Route('/source/<ident>',
-          handler='sources.Sources',
+          handler='sources.Source',
           name='source-edit'),
+    Route('source/delete/<ident>',
+          handler='sources.SourceDelete',
+          name='source-delete'),
     Route('/check/<ident>',
           handler='checker.Check',
           name='check'),

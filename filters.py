@@ -13,3 +13,15 @@ def uri(*args, **kwargs):
     str: A webapp2-built uri.
   '''
   return webapp2.uri_for(*args, **kwargs)
+
+def divided_by_rate(count):
+  '''Divides the number of updates by the rpm to determine minute count.
+
+  Args:
+    count: Number of updates since the source changed.
+
+  Returns:
+    int: The number of minutes since the source changed.
+  '''
+  rpm = 2
+  return count / rpm

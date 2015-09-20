@@ -1,4 +1,5 @@
 from base_model import BaseModel
+from google.appengine.ext import ndb
 
 class Page(BaseModel):
   '''Models a page to check, including what to expect on the page.'''

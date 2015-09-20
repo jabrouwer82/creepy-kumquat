@@ -8,6 +8,8 @@ import filters
 
 from types import FunctionType
 
+EMAIL = 'jabrouwerutil@gmail.com'
+
 jinja_env = jinja2.Environment( #pylint: disable=invalid-name
     autoescape=True,
     loader=jinja2.FileSystemLoader(
